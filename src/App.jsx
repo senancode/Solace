@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import DashboardPage from './pages/DashboardPage'
 import JournalPage from './pages/JournalPage'
+import JournalDetailPage from './pages/JournalDetailPage'
 import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
@@ -28,7 +29,16 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route
+  path="/journal/:id"
+  element={
+    <ProtectedRoute>
+      <JournalDetailPage />
+    </ProtectedRoute>
+  }
+/>
     </Routes>
+    
   )
 }
 
